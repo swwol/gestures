@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<title>CreateJS export from gestures_overlay</title>
+
+<script src="easeljs-0.6.0.min.js"></script>
+<script src="tweenjs-0.4.0.min.js"></script>
+<script src="movieclip-0.6.0.min.js"></script>
+<script src="preloadjs-0.3.0.min.js"></script>
+<script src="gestures_overlay.js"></script>
+<script src="jquery-2.0.3.min.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+$(document).bind('touchmove', false);
+	canvas = document.getElementById("canvas");
+	exportRoot = new lib.gestures_overlay();
+	stage = new createjs.Stage(canvas);
+	createjs.Touch.enable(stage);
+	stage.addChild(exportRoot);
+	stage.update();
+	stage.enableMouseOver();
+ 	
+ 	exportRoot.b1.onClick= parent.trans;
+    exportRoot.b2.onClick= parent.trans;
+    exportRoot.b3.onClick= parent.trans;
+    exportRoot.b4.onClick= parent.trans;
+    exportRoot.b5.onClick= parent.trans;
+    exportRoot.b6.onClick= parent.trans;
+    exportRoot.b7.onClick= parent.trans;
+    exportRoot.b8.onClick= parent.trans;
+    exportRoot.b9.onClick= parent.trans;
+  
+  
+    exportRoot.b1.name="b1";
+    exportRoot.b2.name="b2";
+    exportRoot.b3.name="b3";
+    exportRoot.b4.name="b4";
+    exportRoot.b5.name="b5";
+    exportRoot.b6.name="b6";
+    exportRoot.b7.name="b7";
+    exportRoot.b8.name="b8";
+    exportRoot.b9.name="b9";
+
+    
+
+    
+    
+
+
+	createjs.Ticker.setFPS(24);
+	createjs.Ticker.addEventListener("tick", stage);
+	
+	
+}
+</script>
+</head>
+
+<body onload="init();">
+	<canvas id="canvas" width="1024" height="768" style="position:absolute; top:0; left:0;"> </canvas>
+</body>
+</html>
